@@ -1,0 +1,130 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "message": "Salut !",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Henri",
+      "userRecoitId": 2,
+      "userRecoitName": "Paul"
+    },
+    {
+      "id": 2,
+      "message": "Tu vas bien ?",
+      "userEnvoiId": 2,
+      "userEnvoiName": "Paul",
+      "userRecoitId": 1,
+      "userRecoitName": "Henri"
+    },
+    {
+      "id": 8,
+      "message": "Message de l'imprimante",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Epson",
+      "userRecoitId": 2,
+      "userRecoitName": "Acer"
+    },
+    {
+      "id": 9,
+      "message": "Test de message",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Test",
+      "userRecoitId": 2,
+      "userRecoitName": "TestRecois"
+    },
+    {
+      "id": 12,
+      "message": "on s'amuse",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Martin",
+      "userRecoitId": 2,
+      "userRecoitName": "Paul"
+    },
+    {
+      "id": 13,
+      "message": "le titanic",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Delphine",
+      "userRecoitId": 2,
+      "userRecoitName": "Leonard"
+    },
+    {
+      "id": 14,
+      "message": "Moi Tarzan",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Johnny",
+      "userRecoitId": 2,
+      "userRecoitName": "Jane"
+    },
+    {
+      "id": 15,
+      "message": "Moi Tarzan",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Johnny",
+      "userRecoitId": 2,
+      "userRecoitName": "Jane"
+    },
+    {
+      "id": 16,
+      "message": "Je suis Tom",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Tom",
+      "userRecoitId": 2,
+      "userRecoitName": "Alissa"
+    },
+    {
+      "id": 17,
+      "message": "Je suis Tom",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Tom",
+      "userRecoitId": 2,
+      "userRecoitName": "Alissa"
+    },
+    {
+      "id": 18,
+      "message": "Je suis alice",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Alice",
+      "userRecoitId": 2,
+      "userRecoitName": "Saprit"
+    },
+    {
+      "id": 19,
+      "message": "Excalibur l'épée légendaire",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Merlin",
+      "userRecoitId": 2,
+      "userRecoitName": "Arthur"
+    },
+    {
+      "id": 20,
+      "message": "Test",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Merlin",
+      "userRecoitId": 2,
+      "userRecoitName": "Arthur"
+    },
+    {
+      "id": 21,
+      "message": "Test",
+      "userEnvoiId": 1,
+      "userEnvoiName": "Merlin",
+      "userRecoitId": 2,
+      "userRecoitName": "Arthur"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Delphine",
+      "email": "delphine@free.fr",
+      "hashPassword": "123"
+    },
+    {
+      "id": 2,
+      "username": "Bidule",
+      "email": "bidule@free.fr",
+      "hashPassword": "456"
+    }
+  ]
+}

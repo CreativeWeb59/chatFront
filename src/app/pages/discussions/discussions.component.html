@@ -1,0 +1,14 @@
+<h2>Liste des discussions</h2>
+<div id="contain-discussions">
+    <!-- <div *ngFor="let message of messages">
+        <div *ngIf="userId == message.userEntity1.id">
+            <a routerLink="/messages/{{ message.userEntity2.id }}">Conversation avec {{ message.userEntity2.userName }}</a>
+        </div>
+        <div *ngIf="userId == message.userEntity2.id">
+        <a routerLink="/messages/{{ message.userEntity1.id }}">Conversation avec {{ message.userEntity1.userName }}</a>
+    </div> -->
+    <!-- </div> -->
+    <div *ngFor="let user of users">
+        <a [routerLink]="['/messages', user.id]">Conversation avec {{ user.userName }}</a>
+      </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="h-16">
+</div>
+<h1 class="text-3xl text-black mb-6 text-center mb-8">Se connecter</h1>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <label for="userName" class="label">userName</label>
+        <input id="userName" type="text" name="userName" formControlName="userName" placeholder="Votre pseudo">
+        <!-- <span class="text-red-400 text-sm">
+                <span>{{ $message }}</span>
+            </span> -->
+    </div>
+
+    <div class="mb-4">
+        <label for="password" class="label">Mot de passe</label>
+        <input id="password" type="password" name="password" formControlName="password"
+            placeholder="Votre mot de passe">
+        <!-- <span class="text-red-400 text-sm">{{ $message }}</span> -->
+    </div>
+
+    <button type="submit" class="btn w-full">Se connecter</button>
+</form>
+
+<div class="h-96">
+    <h2>Détail du user</h2>
+    <div>
+        <!-- <div *ngFor="let laListeUser of listeUser"> -->
+        <!-- <div *ngIf="user"></div>
+        <div>Id : {{ user.id}}</div>
+        <div>Nom : {{ user.userName}}</div> -->
+        <!-- <div>Email : {{ user.email}}</div>
+        <div>Password : {{ user.password}}</div> -->
+    </div>
+</div>
+
+<button (click)="disconnect()">Se déconnecter</button>
