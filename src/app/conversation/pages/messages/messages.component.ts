@@ -98,7 +98,6 @@ export class MessagesComponent implements OnDestroy, OnInit {
    */
   sendMessage() {
     this.majDate();
-    console.log("Formulaire : " + this.form.value);
     // this.notifierService.send(this.form.value);
     this.notifierService.sendMessage(this.form.value);
     this.form.patchValue({

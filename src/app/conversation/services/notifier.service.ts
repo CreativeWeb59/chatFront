@@ -21,7 +21,10 @@ export class NotifierService {
         share({ resetOnRefCountZero: true })
       );
 
-    this.newMessage = stomp.watch('/notifier/new-message')
+      // à modifier pour écouter seulement l'id de l'utilisateur
+      // correspond à @SendTo("/topic/messages") du back
+      this.newMessage = stomp.watch('/topic/messages')
+      // this.newMessage = stomp.watch('/notifier/new-message')
       .pipe(
         map(message => JSON.parse(message.body)),
         share({ resetOnRefCountZero: true })
@@ -48,7 +51,10 @@ export class NotifierService {
    */
   public sendMessage(message: any) {
     this.stomp.publish({
-      destination: `/app/private-message/${message.user2_id}`,
+      // en cours de codage
+      // a mettre pour message privé
+      // correspond à @MessageMapping("/send-message") du back
+      destination: `/app/send-message`,
       body: JSON.stringify(message),
       headers: { 'content-type': 'application/json' }
     });
@@ -63,8 +69,10 @@ export class NotifierService {
 
   // Ajout
   public subscribeToTopic(user1_id: string) {
-    return this.stomp.watch(`/private/message/${user1_id}`);
-    // return this.stomp.watch(`/topic/messages`);
+    return this.stomp.watch(`/topic/messages`);
+    // en cours de codage
+    // a mettre pour message privé
+    // return this.stomp.watch(`/private/message/${user1_id}`);
   }
 
   
