@@ -57,7 +57,7 @@ export class MessagesComponent implements OnDestroy, OnInit {
      * 
      * A faire => gestion de l'id
      */
-    this.notifierService.subscribeToTopic(this.cookieId).subscribe((message) => {
+    this.notifierService.subscribeToTopic(this.userService.getCookie(this.cookieId)).subscribe((message) => {
       const parsedMessage = JSON.parse(message.body); // Conversion de la chaîne JSON en objet JavaScript
       this.messages.push(parsedMessage.message); // Ajout de l'objet dans le tableau messages - recupere uniquement le message
     });
@@ -129,7 +129,6 @@ export class MessagesComponent implements OnDestroy, OnInit {
   }
 
   private getMessageConversation(user2_id: string): void {
-    console.log("cookie : " + this.cookieId);
     this.conversationService.getConversationsByIdUnique(this.userService.getCookie(this.cookieId), user2_id)
       .pipe(
         map(conversations => conversations.map(conversation => conversation.message))

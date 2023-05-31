@@ -15,16 +15,9 @@ export class NotifierService {
   newMessage: Observable<any> = new Subject();
 
   constructor(private stomp: RxStomp, private http: HttpClient) {
-    this.notify = stomp.watch('/notifier/message')
-      .pipe(
-        map(message => JSON.parse(message.body)),
-        share({ resetOnRefCountZero: true })
-      );
-
-      // à modifier pour écouter seulement l'id de l'utilisateur
-      // correspond à @SendTo("/topic/messages") du back
+    // ecoute les messages  
+    // correspond à @SendTo("/topic/messages") du back
       this.newMessage = stomp.watch('/topic/messages')
-      // this.newMessage = stomp.watch('/notifier/new-message')
       .pipe(
         map(message => JSON.parse(message.body)),
         share({ resetOnRefCountZero: true })
@@ -32,47 +25,34 @@ export class NotifierService {
   }
 
   /**
-   * permet d'envoyer le message vers le back
-   * pour sauvegarde Bdd
-   * @param message : Contenu du formulaire
-   */
-  // public send(message: any) {
-  //   this.stomp.publish({
-  //     destination: 'app/message',
-  //     body: JSON.stringify(message),
-  //     headers: { 'content-type': 'application/json' }
-  //   });
-  // }
-
-  /**
-  * envoie les donnees au back qui renvoi au front
+  * envoie un message privé
+  * avec en parametre l'id du receveur
   * afin de mettre à jour le socket sur les clients front
    * @param message 
    */
   public sendMessage(message: any) {
+    console.log("iduser2 : " + message.user2_id);
     this.stomp.publish({
       // en cours de codage
       // a mettre pour message privé
       // correspond à @MessageMapping("/send-message") du back
-      destination: `/app/send-message`,
+      destination: `/app/private-message`,
+      //      destination: `/app/send-message`,
       body: JSON.stringify(message),
       headers: { 'content-type': 'application/json' }
     });
   }
 
 
-  // Ajout
-  // public subscribeToTopic(topic: string) {
-  //   //    return this.stomp.watch(`/topic/${topic}`);
-  //   return this.stomp.watch(`/topic/new-message`);
-  // }
+  /**
+   * ecoute les messages envoyés en privé
+   * @param user1_id 
+   * @returns 
+   */
 
-  // Ajout
+  
   public subscribeToTopic(user1_id: string) {
-    return this.stomp.watch(`/topic/messages`);
-    // en cours de codage
-    // a mettre pour message privé
-    // return this.stomp.watch(`/private/message/${user1_id}`);
+    return this.stomp.watch(`/topic/private/${user1_id}`);
   }
 
   
